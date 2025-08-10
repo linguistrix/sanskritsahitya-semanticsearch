@@ -7,7 +7,6 @@ client = genai.Client(api_key=st.secrets["gemini_api_key"])
 pinecone = Pinecone(api_key=st.secrets["pinecone_api_key"])
 index = pinecone.Index("sanskrit-sahitya-org")
 
-@st.cache_data
 def query_pinecone(search_query):
     return index.query(
         vector=client.models.embed_content(
