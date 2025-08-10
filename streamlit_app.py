@@ -43,8 +43,7 @@ st.markdown(
 if prompt := st.chat_input("Search query (e.g. verse about an old king being like a lamp in the morning)"):
     if not prompt.strip():
         st.error("Please enter some text.")
-    else:
-        st.session_state.messages.append({"role": "user", "content": prompt})
+    else:        
         with st.chat_message("user"):
             st.markdown(prompt)
 
