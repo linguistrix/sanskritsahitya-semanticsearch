@@ -50,6 +50,7 @@ if prompt := st.chat_input("Search query (e.g. verse about an old king being lik
         with st.spinner("Generating response ... Please wait."):
             response = query_pinecone(prompt)
             if response.matches:
+                st.markdown("# The top 5 matches are:")
                 for match in response.matches:
                     st.markdown(f"[https://sanskritsahitya.com/{match.id}](https://sanskritsahitya.com/{match.id})")                    
             else:
