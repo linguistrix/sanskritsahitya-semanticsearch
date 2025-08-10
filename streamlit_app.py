@@ -51,6 +51,6 @@ if prompt := st.chat_input("Search query (e.g. verse about an old king being lik
             response = query_pinecone(prompt)
             if response.matches:
                 for match in response.matches:
-                    st.markdown(match.id)
+                    st.markdown(f"[https://sanskritsahitya.com/{match.id}]({https://sanskritsahitya.com/{match.id}})")                    
             else:
                 st.error("No match found, or API limit exhausted.")
