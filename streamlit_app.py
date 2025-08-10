@@ -14,7 +14,7 @@ def query_pinecone(search_query):
             model="gemini-embedding-001",
             contents=[search_query],
             config=types.EmbedContentConfig(task_type="QUESTION_ANSWERING")).embeddings[0].values, 
-        top_k=5,
+        top_k=10,
         include_metadata=True,
         include_values=False
     )
@@ -22,16 +22,16 @@ def query_pinecone(search_query):
 st.title("Sanskrit Sahitya Semantic Search")
 st.markdown(
     """    
-    This note is on a free API tier and thus supports a limited number of requests. It may become temporarily unavailable if too many people use the service.    
-    
+    This is a demo app for trying out semantic search over the SanskritSahitya.org corpus.   
     ---
-    This is a demo app for trying out semantic search over the SanskritSahitya.org corpus. 
 
     You can find shlokas through free-form search queries about the content of the shloka.
 
     Currently the following texts have been included in the Search data: Raghuvansham, Kumarasambhavam, Ramayanam, Mahabharatam, Meghadutam, Kiratarjuniyam, Rtusamharam.
 
     You can mix and match English, Sanskrit or other languages in the query.
+
+    Note: This demo is on a free API tier and thus supports a limited number of requests. It may become temporarily unavailable if too many people use the service.    
     
     **Examples** - Try entering one of these
       - verse about an old king who is like a lamp in the morning
@@ -50,7 +50,7 @@ if prompt := st.chat_input("Search query (e.g. verse about an old king being lik
         with st.spinner("Generating response ... Please wait."):
             response = query_pinecone(prompt)
             if response.matches:
-                st.markdown("# The top 5 matches are:")
+                st.markdown("## The top matches are:")
                 for match in response.matches:
                     st.markdown(f"[https://sanskritsahitya.com/{match.id}](https://sanskritsahitya.com/{match.id})")                    
             else:
