@@ -37,9 +37,9 @@ st.markdown(
 
     You can mix and match English, Sanskrit or other languages in the query.
 
-    Note: This demo is on a free API tier and thus supports a limited number of requests. It may become temporarily unavailable if too many people use the service.    
+    **Note:** This demo is on a free API tier and thus supports a limited number of requests. It may become temporarily unavailable if too many people use the service.    
     
-    **Examples** - Try entering one of these
+    **Examples**: Try entering one of these
       - verse about an old king who is like a lamp in the morning
       - cloud is just smoke and vapor
       - विघ्न होते हुए भी जो नहीं डगमगाते
@@ -53,7 +53,7 @@ if prompt := st.chat_input("Search query (e.g. verse about an old king being lik
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        with st.spinner("Generating response ... Please wait."):
+        with st.spinner("Generating response... Please wait."):
             response = query_pinecone(prompt)
             if response.matches:
                 st.markdown("## The top matches are:")
