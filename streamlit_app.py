@@ -27,6 +27,7 @@ st.markdown(
     You can find shlokas through free-form search queries about the content of the shloka.
 
     Currently the following texts have been included in the Search data: 
+    * Bhagavad Gita
     * Raghuvansham
     * Kumarasambhavam
     * Ramayanam
