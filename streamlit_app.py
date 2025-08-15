@@ -27,12 +27,14 @@ st.markdown(
     You can find shlokas through free-form search queries about the content of the shloka.
 
     Currently the following texts have been included in the Search data: 
-    * Bhagavad Gita
-    * Raghuvansham
-    * Kumarasambhavam
-    * Ramayanam
-    * Meghadutam
+    * Amarushatakam
+    * Bhagavad Gita    
     * Kiratarjuniyam
+    * Kumarasambhavam
+    * Meghadutam
+    * Pancantram
+    * Raghuvansham
+    * Ramayanam        
     * Rtusamharam
 
     You can mix and match English, Sanskrit or other languages in the query.
