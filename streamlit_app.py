@@ -60,6 +60,6 @@ if prompt := st.chat_input("Search query (e.g. verse about an old king being lik
             if response.matches:
                 st.markdown("## The top matches are:")
                 for match in response.matches:
-                    st.markdown(f"[https://sanskritsahitya.org/{match.id}](https://sanskritsahitya.com/{match.id})")                    
+                    st.markdown(f"[https://sanskritsahitya.org/{match.id}](https://sanskritsahitya.org/{match.id})")                    
             else:
                 st.error("No match found, or API limit exhausted.")
